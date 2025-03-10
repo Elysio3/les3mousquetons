@@ -6,7 +6,7 @@ $path = $_SERVER['DOCUMENT_ROOT'] . "/";
 require_once 'vendor/autoload.php';
 
 // Load environment variables from .env
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $servername = $_ENV['SERVER_NAME'];
