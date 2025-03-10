@@ -3,7 +3,7 @@ require_once('tcpdf/tcpdf.php'); // Inclure la bibliothèque TCPDF
 $path = $_SERVER['DOCUMENT_ROOT'] . "/";
 
 
-require_once 'vendor/autoload.php';
+require_once '/vendor/autoload.php';
 
 // Load environment variables from .env
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
