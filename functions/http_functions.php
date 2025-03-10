@@ -8,7 +8,7 @@
  */
 function getData($table, $data = null) {
 
-    $api_base_url = "https://3m.alysia.fr/api/";
+    $api_base_url = "http://les3mousquetons.fr/api/";
     $ch = curl_init();
 
     if ($data != null) {
@@ -54,7 +54,7 @@ function getData($table, $data = null) {
  * @return mixed
  */
 function postData($table, $data) {
-    $api_base_url = "https://3m.alysia.fr/api/";
+    $api_base_url = "http://les3mousquetons.fr/api/";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $api_base_url . "?table=" . $table);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -85,7 +85,7 @@ function postData($table, $data) {
  * @return mixed
  */
 function putData($table, $data) {
-    $api_base_url = "https://3m.alysia.fr/api/";
+    $api_base_url = "http://les3mousquetons.fr/api/";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $api_base_url . "?table=" . $table);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -116,7 +116,7 @@ function putData($table, $data) {
  * @return mixed
  */
 function deleteData($table, $id) {
-    $api_base_url = "https://3m.alysia.fr/api/";
+    $api_base_url = "http://les3mousquetons.fr/api/";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $api_base_url . "?table=" . $table . "&id=" . $id);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -138,4 +138,3 @@ function deleteData($table, $id) {
         return json_decode($response, true);
     }
 }
-

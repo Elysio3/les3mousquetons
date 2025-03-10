@@ -16,7 +16,7 @@ require_once 'vendor/autoload.php';
 include 'functions/http_functions.php';
 
 // Load environment variables from .env
-$dotenv = Dotenv\Dotenv::createImmutable("/var");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 

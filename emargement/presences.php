@@ -1,6 +1,21 @@
 <?php
 
-$admin_password = "password"; // À changer
+$path = $_SERVER['DOCUMENT_ROOT'] . "/";
+
+
+require_once 'vendor/autoload.php';
+
+// Load environment variables from .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+$servername = $_ENV['SERVER_NAME'];
+$username = $_ENV['DATABASE_USERNAME'];
+$password = $_ENV['DATABASE_PASSWORD'];
+$dbname = $_ENV['DATABASE_NAME'];
+
+
+$admin_password = $_ENV['ADMIN_PASSWORD'];
 session_start();
 
 if (!isset($_SESSION["logged_in"])) {
@@ -15,12 +30,6 @@ if (!isset($_SESSION["logged_in"])) {
         exit();
     }
 }
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "3m";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

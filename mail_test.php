@@ -7,7 +7,7 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 require_once 'vendor/autoload.php';
 
 // Load environment variables from .env
-$dotenv = Dotenv\Dotenv::createImmutable("/var");
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 
@@ -32,10 +32,10 @@ try {
     $mail->addAddress('mael.kerviche@outlook.com'); // Recipient's email
 
     $mail->Subject = 'Test Email from 3M Project';
-    $mail->Body    = 'Hello, this is a test email from your 3M project mailing system.';
+    $mail->Body = 'Hello, this is a test email from your 3M project mailing system.';
 
     // Send email
-    if($mail->send()) {
+    if ($mail->send()) {
         echo 'Email sent successfully';
     } else {
         echo 'Email could not be sent.';

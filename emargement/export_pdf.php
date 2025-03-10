@@ -1,10 +1,18 @@
 <?php
 require_once('tcpdf/tcpdf.php'); // Inclure la bibliothèque TCPDF
+$path = $_SERVER['DOCUMENT_ROOT'] . "/";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "3m";
+
+require_once 'vendor/autoload.php';
+
+// Load environment variables from .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+$servername = $_ENV['SERVER_NAME'];
+$username = $_ENV['DATABASE_USERNAME'];
+$password = $_ENV['DATABASE_PASSWORD'];
+$dbname = $_ENV['DATABASE_NAME'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
