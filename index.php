@@ -116,7 +116,7 @@ try {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
-                $api_url = "https://3m.alysia.fr/api/?table=users&email=" . urlencode($email);
+                $api_url = "http://les3mousquetons.fr/api/?table=users&email=" . urlencode($email);
 
 
                 $ch = curl_init();
