@@ -15,6 +15,8 @@ $username = $_ENV['DATABASE_USERNAME'];
 $password = $_ENV['DATABASE_PASSWORD'];
 $dbname = $_ENV['DATABASE_NAME'];
 
+echo $servername;
+
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
