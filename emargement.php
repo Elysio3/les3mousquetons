@@ -10,15 +10,15 @@ require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$servername = $_ENV['SERVER_NAME'];
-$username = $_ENV['DATABASE_USERNAME'];
+$server_name = $_ENV['SERVER_NAME'];
+$user_name = $_ENV['DATABASE_USERNAME'];
 $password = $_ENV['DATABASE_PASSWORD'];
 $dbname = $_ENV['DATABASE_NAME'];
 
-echo $servername;
+echo $server_name . "test";
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($server_name, $user_name, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Échec de la connexion à la base de données : " . $conn->connect_error);
