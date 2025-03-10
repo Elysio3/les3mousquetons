@@ -1,0 +1,9 @@
+{
+    "name": "alysia/3m",
+    "description": "3M route management",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^3.7",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
