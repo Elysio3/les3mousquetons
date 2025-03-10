@@ -10,10 +10,10 @@ require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$server_name = $_ENV['SERVER_NAME'];
-$user_name = $_ENV['DATABASE_USERNAME'];
-$password = $_ENV['DATABASE_PASSWORD'];
-$dbname = $_ENV['DATABASE_NAME'];
+$server_name = $_ENV['DB_HOST'];
+$user_name = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
+$dbname = $_ENV['DB_NAME'];
 
 echo $server_name . "test";
 
